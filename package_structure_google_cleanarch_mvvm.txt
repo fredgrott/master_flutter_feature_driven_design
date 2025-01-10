@@ -1,0 +1,34 @@
+
+
+lib
+----ui
+  -----core
+     -----ui
+       ------shared_widgets
+     -----themes
+   -----feature_name
+      -----view_model
+      ------widgets
+-----domain
+  -----imodels
+  -----irepos
+  -----iusecase
+-----data
+  -----repos
+  -----usecases
+  -----models
+-----config
+-----utils
+-----routing
+-----main
+-----main_debug
+-----main_staging
+-----main_product
+
+test
+----data
+----domain
+----ui
+----utils
+----fakes
+----mocks

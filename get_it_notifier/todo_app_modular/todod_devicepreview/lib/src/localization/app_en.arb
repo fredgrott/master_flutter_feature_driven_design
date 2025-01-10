@@ -1,0 +1,6 @@
+{
+  "appTitle": "todod_devicepreview",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

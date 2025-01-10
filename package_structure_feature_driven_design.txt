@@ -1,0 +1,58 @@
+lib
+--main
+--main_debug
+--main_staging(storyboarding in debug mnode)
+--main_preview(debug mode, screenshots for app store
+   re-using fakes from storyboarding)
+--main_product
+  src
+    app_wrapper
+    notifiers(for app wrapper)
+    providers(for app wrapper)
+    --localization
+    --routing
+    --application
+         ---dto 
+              todo_dto
+         ---todo_repository
+         ---todo_factory
+         ---todo_service(event commands to
+             debugPrint log domain events)
+         ---fake_todo_repository
+         ---fake_todo_factory
+         ---fake_todo_service(event commands to 
+             debugPrint log domain events)
+     ---infrastructure
+            logging
+            db_helper
+            dart_extensions
+            event_commands
+            app_exceptions
+     ---domain
+           models
+             value_objects
+             entities
+             nameof_aggregate_root(todo matches feature name)
+      ui
+        nav_shell_scaffold
+        themes
+        common
+        feature_name
+          view_model(event commands again)
+          notifier
+          provider
+          widgets
+             screens
+             special_widgets
+
+test
+   unit
+     domain_models_test
+   feature_name
+     screen_test
+     goldens_test
+     mocks
+   app_wrapper_for_widget_testing
+   test_robots
+   test_matchers
+         
