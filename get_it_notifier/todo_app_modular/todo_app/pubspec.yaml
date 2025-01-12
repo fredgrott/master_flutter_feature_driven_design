@@ -19,7 +19,8 @@ dependencies:
   universal_io: ^2.2.2
   infrastructure:
     path: ../infrastructure
-  
+  localizations:
+    path: ../localizations
 
 
 dev_dependencies:

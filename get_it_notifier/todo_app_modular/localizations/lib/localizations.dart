@@ -1,5 +1,6 @@
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+library localizations;
+
+
+export 'package:intl/intl,dart';
+export 'package:intl_utils/intl_utils.dart';
+export '/generated/l10n.dart';
