@@ -1,0 +1,28 @@
+name: fdd_api
+description: "A new Flutter package project."
+version: 0.0.1
+homepage:  https://fredrott.substack.com
+
+environment:
+  sdk: ^3.7.0-209.1.beta
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  uuid: ^4.5.1
+  faker: ^2.2.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lint: ^2.3.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+
+
+  
