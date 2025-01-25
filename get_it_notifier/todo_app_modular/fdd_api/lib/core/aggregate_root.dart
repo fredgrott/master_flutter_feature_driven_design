@@ -7,8 +7,10 @@
 // Copyright (c) 2024 Zooper
 
 
-import 'package:fdd_api/core/models/entity.dart';
-import 'package:fdd_api/core/models/id.dart';
+
+
+import 'package:fdd_api/core/entity.dart';
+import 'package:fdd_api/core/id.dart';
 
 /// Represents the root of an aggregate, a cluster of domain entities and value objects.
 ///

@@ -25,8 +25,9 @@ And that generally requireed layers to be packages including localization. The D
 
 ### CQRS
 
-Since we no longer user CRUD we do not the QRS part where we separate every command into CRUD slots. Instead I use a command event bus to debug Domain Events as they travel from Domain to Application and UI layers.
+Even though we do not use CRUD-SQL anymore we can still use the segregation of command and query to decouple both non-presentation and presentation layers and their elements.
 
+I specifically use the streamline package to implement CQRS.
 
 
 ## Background

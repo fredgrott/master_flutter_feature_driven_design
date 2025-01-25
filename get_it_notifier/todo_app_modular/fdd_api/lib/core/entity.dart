@@ -7,7 +7,9 @@
 // Copyright (c) 2024 Zooper
 
 
-import 'package:fdd_api/core/models/id.dart';
+
+
+import 'package:fdd_api/core/id.dart';
 
 /// An abstract base class representing a domain entity with a unique identity.
 ///

@@ -7,7 +7,9 @@
 // Copyright (c) 2024 Zooper
 
 
-import 'package:fdd_api/core/models/value_object.dart';
+
+
+import 'package:fdd_api/core/value_object.dart';
 
 /// A generic abstract class for creating value objects that encapsulate a single value of a specific type.
 ///

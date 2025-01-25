@@ -7,7 +7,9 @@
 // Copyright (c) 2024 Zooper
 
 
-import 'package:fdd_api/core/models/single_type_value_object.dart';
+
+
+import 'package:fdd_api/core/single_type_value_object.dart';
 
 /// Represents a generic identifier for entities within the domain model.
 ///
