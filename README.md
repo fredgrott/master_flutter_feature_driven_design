@@ -27,7 +27,7 @@ And that generally requireed layers to be packages including localization. The D
 
 Even though we do not use CRUD-SQL anymore we can still use the segregation of command and query to decouple both non-presentation and presentation layers and their elements.
 
-I specifically use the streamline package to implement CQRS.
+I specifically use the dart mediator package to implement CQRS.
 
 
 ## Background
