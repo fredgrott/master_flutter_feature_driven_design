@@ -14,14 +14,16 @@ dependencies:
   equatable: ^2.0.7
   dartz: ^0.10.1
   uuid: ^4.5.1
-  freezed_annotation: ^2.4.4
   kt_dart: ^1.1.0
+  freezed_annotation: ^2.4.1
+  modddels_annotation_dartz: ^0.2.0
   
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner:  ^2.4.14
-  freezed: ^2.5.8
+  freezed: ^2.4.2
+  modddels: ^0.2.0
   lint: ^2.3.0
 
 # For information on the generic Dart part of this file, see the
