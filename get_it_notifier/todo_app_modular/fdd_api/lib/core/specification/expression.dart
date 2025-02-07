@@ -1,13 +1,13 @@
 // Copyright 2025 Fredrick Allan Grott. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
+//
+// Modified from speciffication-dart
+// Copyright (c) 2013, Tomochika Hara
+// BSD-2 license
 
-import 'package:fdd_api/core/specification/predicates.dart';
+import 'package:fdd_api/core/specification/predicate.dart';
 
-/// Part of implementing boolean logic for business rules
-/// requires that we have an expression that takes a predicate.
-/// 
-/// @author Fredrick Allan Grott
 PredicateExpressionSpecification expr(Predicate predicate) {
   // ignore: unnecessary_null_comparison
   if (predicate == null) throw ArgumentError("Predicate required.");

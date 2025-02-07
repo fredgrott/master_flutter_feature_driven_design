@@ -14,19 +14,22 @@
 ///
 /// Example usage:
 /// ```dart
-/// class UserMapper extends Mapper {
-///   UserDTO toDTO(User user) {
-///     // Convert a User domain model to a UserDTO
-///     return UserDTO(user.id, user.name);
-///   }
+///class ProductMapper {
+/// ProductModel toModel(ProductDTO dto) => ProductModel(
+///   id: dto.id,
+///    name: dto.name,
+///    price: dto.price,
+ ///   isAvailable: true, // Default availability for newly created entities
+ /// );
 ///
-///   User fromDTO(UserDTO dto) {
-///     // Convert a UserDTO back to a User domain model
-///     return User(dto.id, dto.name);
-///   }
-/// }
+///  ProductDto fromModel(ProductModel model) => ProductDTO(
+ ///   id: model.id,
+///    name: model.name,
+ ///   price: model.price,
+ ///);
+///}
 /// ```
-abstract class Mapper<EntityType, DTOType> {
-  DTOType toDTO(EntityType entity);
-  EntityType fromDTO(DTOType dto);
+abstract class Mapper<ModelType, DTOType> {
+  ModelType toDTO(DTOType dto);
+  DTOType fromModel(ModelType model);
 }

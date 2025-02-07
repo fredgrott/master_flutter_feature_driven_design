@@ -1,17 +1,17 @@
 // Copyright 2025 Fredrick Allan Grott. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
+//
+// Modified from speciffication-dart
+// Copyright (c) 2013, Tomochika Hara
+// BSD-2 license
 
-// ignore_for_file: test_types_in_equals
+// ignore_for_file: unused_element
 
-import 'package:fdd_api/core/specification/operator_mixin.dart';
+import 'package:fdd_api/core/specification/operators.dart';
 import 'package:fdd_api/core/specification/specifications.dart';
 
-/// So the other part of defining the operators is that we have to represent
-/// the actual operation OOP operator == wise.
-/// 
-/// @author Fredrick Allan Grott
-class CompositeSpecification<T> extends Specification<T> with OperatorMixin<T> {
+abstract class CompositeSpecification<T> extends Specification<T> with OperatorMixin<T> {
   @override
   Specification<T> get specification => this;
 
@@ -19,14 +19,11 @@ class CompositeSpecification<T> extends Specification<T> with OperatorMixin<T> {
 
   @override
   int get hashCode => _components.fold(17, (h, s) => 31 * h + s.hashCode);
-
+  
   @override
-  bool operator ==(Object other) =>
-      other is CompositeSpecification && other.runtimeType == runtimeType && other.specification == specification;
-
-  @override
-  bool isSatisfiedBy(T candidate) {
-    return true;
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return super == other;
   }
 }
 
@@ -38,7 +35,6 @@ class ConjunctionSpecification<T> extends CompositeSpecification<T> {
     _components = [this._s1, this._s2];
   }
 
-  // ignore: unused_element
   ConjunctionSpecification._(this._s1, this._s2);
 
   @override
@@ -48,13 +44,15 @@ class ConjunctionSpecification<T> extends CompositeSpecification<T> {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other is ConjunctionSpecification<T> == false) return false;
+    // ignore: test_types_in_equals
     final otherSpec = other as ConjunctionSpecification<T>;
     return this._s1 == otherSpec._s1 && this._s2 == otherSpec._s2;
   }
-
+  
   @override
-  // ignore: unnecessary_overrides
-  int get hashCode => super.hashCode;
+  // basic way to define a hash
+  int get hashCode => Object.hash(this._s1, this._s2);
+  
 }
 
 class DisjunctionSpecification<T> extends CompositeSpecification<T> {
@@ -72,11 +70,13 @@ class DisjunctionSpecification<T> extends CompositeSpecification<T> {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     if (other is DisjunctionSpecification<T> == false) return false;
+    // ignore: test_types_in_equals
     final otherSpec = other as DisjunctionSpecification<T>;
     return this._s1 == otherSpec._s1 && this._s2 == otherSpec._s2;
   }
-
+  
   @override
-  // ignore: unnecessary_overrides
-  int get hashCode => super.hashCode;
+  // basic way to define a hash
+  int get hashCode => Object.hash(this._s1, this._s2);
+  
 }

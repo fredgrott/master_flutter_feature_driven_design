@@ -1,14 +1,14 @@
 // Copyright 2025 Fredrick Allan Grott. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
+//
+// Modified from speciffication-dart
+// Copyright (c) 2013, Tomochika Hara
+// BSD-2 license
 
-import 'package:fdd_api/core/specification/composites.dart';
+import 'package:fdd_api/core/specification/composite.dart';
 import 'package:fdd_api/core/specification/specifications.dart';
 
-/// Sets up the boolean logic operators that can 
-/// be used to define business rules.
-/// 
-/// @author Fredrick Allan Grott
 mixin OperatorMixin<T> {
   Specification<T> get specification;
 

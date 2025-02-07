@@ -1,23 +1,13 @@
 // Copyright 2025 Fredrick Allan Grott. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
+//
+// Modified from speciffication-dart
+// Copyright (c) 2013, Tomochika Hara
+// BSD-2 license
 
-import 'package:fdd_api/core/specification/operator_mixin.dart';
+import 'package:fdd_api/core/specification/operators.dart';
 
-/// Implementing the specification pattern that uses boolean logic to
-/// implement business rules:
-/// see https://en.wikipedia.org/wiki/Specification_pattern
-/// Then its use in the RichModel or AggregateRoot to ensure
-/// proper Model or AggregateRoot instance formation.
-///
-///  Usage assuming import is assign as spec:
-///  ```
-///  var spec1 = spec.expr((value) => value.length > 2);
-/// var spec2 = spec.expr((String str) => str.startsWith("abc"));
-/// var conjunction = spec1 & spec2;
-/// ```
-/// 
-/// @author Fredrick Allan Grott
 abstract class Specification<T> {
   bool isSatisfiedBy(T candidate);
 }
