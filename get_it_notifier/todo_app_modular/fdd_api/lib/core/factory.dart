@@ -13,6 +13,9 @@
 /// invariants and constraints. Factories abstract away the creation details and provide a centralized
 /// place to manage object creation.
 ///
+/// Often used to create the individual Aggregates in
+/// an Aggregate Root.
+///
 /// Example usage:
 /// ```dart
 /// class UserFactory extends Factory {
