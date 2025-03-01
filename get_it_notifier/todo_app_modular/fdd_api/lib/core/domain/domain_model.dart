@@ -66,6 +66,56 @@
 /// }
 /// ```
 ///
+/// Then to access the data fixture:
+/// ```dart
+/// CompanyFixture.factory(0.makeMany(10);
+/// ```
+///
+/// The Json fixtrue is similar:
+/// ```dart
+/// extension CompanyFixture on Company {
+///  static _CompanyFixtureFactory factory() => 
+/// _CompanyFixtureFactory();
+///}
+///
+///class _CompanyFixtureFactory extends 
+/// JsonFixtureFactory<Company> {
+///  @override
+///  FixtureDefinition<Company> definition() => define(
+///        (faker) => Company(
+///          name: faker.company.name(),
+///          employees: PersonFixture.factory().makeMany(5),
+///        ),
+///      );
+///
+///    @override
+///  JsonFixtureDefinition<Company> jsonDefinition() => 
+/// defineJson(
+///        (company) => {
+///          "name": company.name,
+///          "employees":
+///              
+/// PersonFixture.factory().makeJsonArrayFromMany(company.employees)/// ,
+///        },
+///      );
+///
+///   JsonFixtureDefinition<Company> empty(String name) => ///redefineJson(
+///        (company) => Company(
+///          name: name,
+///          employees: [],
+///        ),
+///      );
+///}
+/// ```
+///
+/// And calling it:
+/// ```dart
+///  CompanyFixture.factory().makeJsonArray(10)
+///  
+/// CompanyFixture.factory().empty("EmptyCompany").makeJsonObject();
+///  CompanyFixture.factory().empty("EmptyCompany").makeJsonArray(10);
+/// ```
+///
 /// @author Fredrick Allan Grott
 mixin DomainModel {
 
